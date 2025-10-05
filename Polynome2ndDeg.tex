@@ -1,0 +1,495 @@
+\documentclass{article} % Classe de document (article, report, book, etc.)
+
+\usepackage[utf8]{inputenc} % Encodage pour les accents
+\usepackage[T1]{fontenc}    % Encodage des caractères
+\usepackage[french]{babel}  % Langue du document (ici, français)
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+
+\title{Polynôme du second degré}
+\author{Téo Jauffret}
+\date{\today}
+
+\begin{document}
+	\maketitle % Génère le titre
+	\tableofcontents
+	
+	\newpage
+	
+	\section{Introduction}
+	\subsection{Définition}
+	Une fonction dite du second degré s'écrit sous la forme développé : 
+	\[
+	ax^2 + bx + c
+	\]
+	où : $$a, b, c \in \mathbb{R}, a \neq 0$$
+	
+	\subsection{Différence avec les fonctions du premier degré}
+	Une fonction du premier degré est linéaire et sa courbe est une droite dont la variation est constante, tandis qu'une fonction du second degré est quadratique et sa courbe est une parabole présentant un minimum ou un maximum et un axe de symétrie.
+	
+	\section{Équations du second degré}
+	\subsection{Forme canonique}
+	La forme canonique d'un polynôme permet de mettre en évidence certaine propriétés clés de celui-ci. (comme $\alpha$ et $\beta$)\\\\
+	Elle s'écrit sous la forme : $a(x - \alpha)^2 + \beta$\\
+	où :
+	\begin{itemize}
+		\item $\alpha = -\frac{b}{2a}$ : abscisse du sommet
+		\item $\beta = f(\alpha)$ : ordonnée du sommet\\
+	\end{itemize}
+	
+	Cette forme est très utile pour identifier rapidement le sommet de la parabole qui est $(\alpha, \beta)$, ce qui permet de connaitre le maximum ou minimum de la fonction.\\
+	
+	\textbf{Exemple de passage de la forme développée a la forme canonique}
+	Soit le polynôme :
+	\[
+		f(x) = 2x^2 - 8x + 5
+	\]
+	On calcule $\alpha$ et $\beta$ :
+	\begin{align*}
+		\alpha &= \frac{8}{4} = 2 \\\\
+		\beta &= 2\alpha^2 - 8\alpha + 5 \\
+		&= 2 \times 2^2 - 8 \times 2 + 5 \\
+		&= 8 - 16 + 5 \\
+		&= -3
+	\end{align*}
+	On remplace les valeurs dans la fonction canonique $f(x) = a(x - \alpha) - \beta$ : 
+	\[
+		f(x) = 2(x - 2) + 3
+	\]
+	
+	\rule{\textwidth}{0.4pt}
+	
+	\noindent \textbf{Exercice n°1 :}
+	On considère la fonction $f(x) = 3x^2 - 12x + 7$
+	\begin{enumerate}
+		\item Calculer $\alpha, \beta$
+		\item En déduire la forme canonique de $f$
+	\end{enumerate}
+	
+	\rule{\textwidth}{0.4pt}
+	\subsection{Équation d'un polynôme du second degré}
+	Pour résoudre une équation d'un polynôme du second degré de la forme :
+	\[
+		ax^2 + bx + c = 0
+	\]
+	On utilise le \b{discriminant} $\Delta$ (dit delta). Il sert a déterminer le nombre et la nature des solutions de l'équation.\\ Il se calcule en faisant :
+	\[
+		\Delta = b^2 - 4ac
+	\]\\
+	La valeur que nous renvoie ce calcule permet de savoir le nombre de solutions de l'équation.
+	\begin{itemize}
+		\item $\Delta > 0$ : 2 racines dans $\mathbb{R}$
+		\item $\Delta = 0$ : 1 racine dans $\mathbb{R}$ double
+		\item $\Delta < 0$ : 0 racine dans $\mathbb{R}$\\
+	\end{itemize}
+	
+	\noindent On peut maintenant utiliser $\Delta$ pour calculer les solutions de l'équation.\\
+	
+	\textbf{Cas n°$1$ : $\Delta$ > 0 donc 2 solutions} \\
+	On a donc $x_1$ et $x_2$ :
+	\[
+	x_1 = \frac{-b + \sqrt{\Delta}}{2a} \quad \quad x_2 = \frac{-b - \sqrt{\Delta}}{2a}
+	\]
+	donc :
+	\[
+	S = \{x_1, x_2\} \text{ ou } \{x_2, x_1\} \text{ en fonction de l'ordre.}
+	\]
+	
+	
+	\textbf{Cas n°$2$ : $\Delta$ = 0 donc 1 solution} \\
+	On a donc $x_0$ :
+	\[
+	x_0 = \frac{-b}{2a}
+	\]
+	donc : 
+	\[
+	S = \{x_0\}
+	\]
+	Cette solution est appelée racine double (ou solution double), car en réalité c’est deux fois la même racine.\\
+	
+	\textbf{Cas n°$3$ : $\Delta$ < 0 donc 0 solution} \\
+	Si $\Delta < 0$ alors il n'existe aucune solution dans les $\mathbb{R}$.
+	
+	\noindent On dit que :
+	\[
+		S = \varnothing
+	\]\\
+	
+	\rule{\textwidth}{0.4pt}
+	\noindent \textbf{Exercice n°2 :}
+	On considère la fonction $f(x) = 2x^2 - 8x + 5$
+	
+	\begin{enumerate}
+		\item Résoudre l'équation $2x^2 - 8x + 5 = 0$
+	\end{enumerate}
+	
+	\rule{\textwidth}{0.4pt}
+	\subsection{Forme factorisée}
+	La forme factorisée d'un polynôme permet de déterminer facilement ses racines et d'étudier le signe de l'expression.\\
+	Elle s'écrit : 
+	\[
+		f(x) = a(x-x_1)(x-x_2)
+	\]
+	où $x_1$ et $x_2$ sont les solutions/racines de l'équation $f(x) = 0$\\
+	
+	\textbf{Exemple de passage de la forme développé a la forme factorisée}
+	Soit le polynôme :
+	\[
+		f(x) = x^2 - 5x + 6
+	\]
+	On résout l'équation $x^2 - 5x + 6 = 0$\\
+	On utilise $\Delta$ :
+	
+	\begin{align*}
+		\Delta &= (-5)^2 - 4 \times 1 \times 6 \\
+		&= 25 - 24 \\
+		&= 1 > 0 \text{\quad donc 2 solutions}
+	\end{align*}
+	
+	\noindent On calcule $x_1, x_2$ : 
+	\[
+	x_1 = \frac{5 + \sqrt{1}}{2} = \frac{6}{2} = 3 \quad \quad x_2 = \frac{5 - \sqrt{1}}{2} = \frac{4}{2} = 2
+	\]
+	
+	\noindent On écris la forme factorisée :
+	\[
+		f(x) = (x - 3)(x - 2)
+	\]
+	où :
+	\begin{itemize}
+		\item a = 1
+		\item $x_1$ = 3
+		\item $x_2$ = 2
+	\end{itemize}
+	
+	
+	\newpage
+	\rule{\textwidth}{0.4pt}
+	\noindent \textbf{Exercice n°3 :}
+	On considère la fonction $f(x) = 2x^2 + 3x + 7$
+	\begin{enumerate}
+		\item Résoudre l'équation $2x^2 + 3x + 7 = 2$
+		\item En déduire la forme factorisée de $f$
+	\end{enumerate}
+	
+	\rule{\textwidth}{0.4pt}
+	
+	\section{Inéquation du second degré}
+	\subsection{Signe de $f(x)$}
+	
+	$a$ fixe le signe global de la fonction, c’est-à-dire son signe aux extrémités.
+	
+	On remarque 2 cas : 
+	
+	\begin{itemize}
+		\item \( a < 0 \) : 
+		\begin{center}
+			\begin{tikzpicture}[scale=0.6]
+			\draw[->, very thick] (-1,0) -- (6,0) node[right] {\(x\)};
+			\draw[->, very thick] (0,-4) -- (0,6) node[above] {\(f(x)\)};
+			\draw[gray, very thin] (-1, -4) grid (6,6);
+			\draw[domain=-1:5, smooth, thick, blue] plot (\x, {-1*(\x)^2 + 4*\x + 1});
+			\end{tikzpicture}
+		\end{center}
+	
+		\item \( a > 0 \) : 
+		\begin{center}
+			\begin{tikzpicture}[scale=0.6]
+			\draw[->, very thick] (-1,0) -- (6,0) node[right] {\(x\)};
+			\draw[->, very thick] (0,-1) -- (0,8) node[above] {\(f(x)\)};
+			\draw[gray, very thin] (-1, -1) grid (6,8);
+			\draw[domain=-1:5, smooth, thick, red] plot (\x, {1*(\x)^2 - 4*\x + 3});
+			\end{tikzpicture}
+		\end{center}
+	\end{itemize}
+	
+	\newpage
+	Le signe de $a$ n'est pas relié a la valeur de $\Delta$.
+	
+	\subsection{Delta dans les courbes}
+	
+	\begin{itemize}
+		\item \( \Delta > 0 \) : 
+		\begin{center}
+			\begin{tikzpicture}[scale=0.6]
+			\draw[->, very thick] (-1,1) -- (6,1) node[right] {\(x\)};
+			\draw[->, very thick] (0,-4) -- (0,6) node[above] {\(f(x)\)};
+			\draw[gray, very thin] (-1, -4) grid (6,6);
+			\draw[domain=-1:5, smooth, thick, blue] plot (\x, {-1*(\x)^2 + 4*\x + 1});
+			\draw[fill=black] (0,1) circle (2pt) node[below] {\(x_1 = 0\)};
+			\draw[fill=black] (4,1) circle (2pt) node[below] {\(x_1 = 4\)};
+			\end{tikzpicture}
+		\end{center}
+		On vois bien ici $x_1$ et $x_2$ (ici dans l'exemple $a < 0$ mais cela aurais pus très bien être l'inverse, l'essentiel est d'avoir 2 solutions visible).\\
+		
+		\item \( \Delta = 0 \) : 
+		\begin{center}
+			\begin{tikzpicture}[scale=0.6]
+			\draw[->, very thick] (-1,0) -- (6,0) node[right] {\(x\)};
+			\draw[->, very thick] (0,-1) -- (0,9) node[above] {\(f(x)\)};
+			\draw[gray, very thin] (-1, -1) grid (6,9);
+			\draw[domain=-1:5, smooth, thick, red] plot (\x, {(\x - 2)*(\x - 2)});
+			\draw[fill=black] (2,0) circle (2pt) node[below right] {\(x_0 = 2\)};
+			\end{tikzpicture}
+		\end{center}
+		On vois bien ici $x_0$ (ici dans l'exemple $a > 0$ mais cela aurais pus très bien être l'inverse, l'essentiel est d'avoir juste 1 solution visible).
+		\newpage
+		
+		\item \( \Delta < 0 \) : 
+		\begin{center}
+			\begin{tikzpicture}[scale=0.6]
+			\draw[->, very thick] (-1,5) -- (6,5) node[right] {\(x\)};
+			\draw[->, very thick] (0,-4) -- (0,8) node[above] {\(f(x)\)};
+			\draw[gray, very thin] (-1, -4) grid (6, 8);
+			\draw[domain=0:5, smooth, thick, blue] plot (\x, {-1*(\x)^2 + 5*\x - 4});
+			\end{tikzpicture}
+		\end{center}
+		On vois bien ici que la courbe ne dépasse jamais l'axe des abscisses. Il n'y a donc aucune solution dans $\mathbb{R}$ (ici dans l'exemple $a < 0$ mais cela aurais pus très bien être l'inverse, l'essentiel est de pas avoir de solutions visible).\\
+	\end{itemize}
+	
+	\rule{\textwidth}{0.4pt}
+	\noindent \textbf{Exercice n°4 :}
+	On considère la fonction $f(x) = 2x^2 + 3x + 7$
+	\begin{enumerate}
+	\item Déduire le sens de la parabole ($\cap$ ou $\cup$)
+	\item Calculer $\Delta$ de $f$ et en déduire les caractéristiques de la parabole sur un graphique.
+	\end{enumerate}
+	
+	\rule{\textwidth}{0.4pt}
+	
+	\subsection{Inéquation d'un polynôme du second degré}
+	\subsubsection{Définition}
+	\textbf{Rappel} : Une inéquation est une expression mathématique dans laquelle on cherche les valeurs d'une variable qui rendent une inégalité vraie.\\
+	
+	\noindent Une inéquation du second degré est une inéquation qui s'écrit sous la forme :
+	
+	\[
+		ax^2 + bx + c <, >, \leq, \geq 0
+	\]
+	avec a $\neq 0$ et $a,b,c \in \mathbb{R}$ \\
+	
+	\newpage
+	
+	\noindent Pour résoudre une inéquation de second degré on utilise $\Delta$ de la même manière que pour les équations du second degré :
+	
+	\begin{itemize}
+		\item $\Delta > 0$ : 2 racines dans $\mathbb{R}$
+		\item $\Delta = 0$ : 1 racine dans $\mathbb{R}$ double
+		\item $\Delta < 0$ : 0 racine dans $\mathbb{R}$ mais quand même des solutions!\\
+	\end{itemize}
+	
+	\noindent Sauf que a la différence d'une équation on écris pas les solutions de la même manières. On va utiliser pour cela un tableau de signe.
+	
+	\subsubsection{Tableau de signe}
+	
+	Une fois les solutions trouvée grâce a $\Delta$ on peut dresser un tableau de signe.\\
+	
+	\begin{itemize}
+	\item $\Delta > 0$ avec $a > 0$ :\\
+	
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$, $x_2$, $+\infty$}
+		\tkzTabLine{,+,z,-,z,+}
+	\end{tikzpicture}\\
+	
+	\item $\Delta > 0$ avec $a < 0$ : \\
+	
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_1$, $x_2$, $+\infty$}
+		\tkzTabLine{,-,z,+,z,-}
+	\end{tikzpicture}\\
+	
+	\item $\Delta = 0$ avec $a > 0$ :\\
+	
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_0$, $+\infty$}
+		\tkzTabLine{,+,z,+}
+	\end{tikzpicture}\\
+	
+	\item $\Delta = 0$ avec $a < 0$ :\\
+	
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_0$, $+\infty$}
+	\tkzTabLine{,-,z,-}
+	\end{tikzpicture}\\
+	
+	\newpage
+	\noindent Attention, en inéquation même dans le cas ou $\Delta < 0$ on peut écrire des solutions!\\
+	
+	\item $\Delta < 0$ avec $a > 0$ :\\
+	
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $+\infty$}
+	\tkzTabLine{,+}
+	\end{tikzpicture}\\
+	
+	\item $\Delta < 0$ avec $a < 0$ :\\
+	
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $+\infty$}
+	\tkzTabLine{,-}
+	\end{tikzpicture}\\
+	
+	\end{itemize}
+	
+	Pour bien mémoriser ses tableaux, il faut imaginer la courbe de la fonction avec $a$ et $\Delta$ et voir ou la fonction coupe/touche/touche pas etc...
+	
+	\subsubsection{Résolution d'une inéquation}
+	
+	Pour résoudre une inéquation, après avoir fait son tableau de signe on peut dresser les solutions en écrivant l'intervalle de ce que l'on cherche.
+	
+	\noindent Par exemple pour :\\
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $4$, $6$, $+\infty$}
+	\tkzTabLine{,-,z,+,z,-}
+	\end{tikzpicture}\\
+	
+	\noindent Si on cherche $f(x) < 0$ on a :
+	\[
+		S = ]-\infty;4[\cup]6;+\infty[
+	\]
+	\noindent Si on cherche $f(x) > 0$ on a :
+	\[
+	S = ]4;6[
+	\]
+	\noindent Si on cherche $f(x) \leq 0$ on a :
+	\[
+	S = ]-\infty;4]\cup[6;+\infty[ \quad \text{On prend $x_1$ et $x_2$ quand on a $\leq$}
+	\]
+	\noindent Si on cherche $f(x) \geq 0$ on a :
+	\[
+	S = [4;6] \quad \text{On prend $x_1$ et $x_2$ quand on a $\geq$}
+	\]\\
+	
+	
+	\textbf{Cas particulier : $\Delta = 0$}\\
+	Pour ce tableau : \\\\
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $x_0$, $+\infty$}
+	\tkzTabLine{,-,z,-}
+	\end{tikzpicture}\\
+	
+	\noindent Si on cherche $f(x) < 0$ on a :
+	\[
+	S = ]-\infty;x_0[ \cup ]x_0;+\infty[
+	\]
+	
+	\noindent Si on cherche $f(x) > 0$ on a :
+	\[
+	S = \varnothing
+	\]
+	
+	\noindent Si on cherche $f(x) \leq 0$ on a :
+	\[
+	S = \mathbb{R}
+	\]
+	
+	\noindent Si on cherche $f(x) \geq 0$ on a :
+	\[
+	S = \{ x_0 \}
+	\]\\
+	
+	\noindent Ici $a < 0$, il faut juste inverser le raisonnement quand $a > 0$.\\
+	
+	\textbf{Cas particulier : $\Delta < 0$}\\
+	Pour ce tableau : \\\\
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $+\infty$}
+	\tkzTabLine{,+}
+	\end{tikzpicture}\\
+	
+	\noindent Si on cherche $f(x) > 0$ on a :
+	\[
+	S = \mathbb{R}
+	\]
+	
+	\noindent Si on cherche $f(x) < 0$ on a :
+	\[
+	S = \varnothing
+	\]
+	
+	\noindent Ici $a > 0$, il faut juste inverser le raisonnement quand $a > 0$.\\
+	
+	\newpage
+	
+	\textbf{Exemple complet de résolution d'inéquation du second degré}
+	
+	\noindent Soit l'inéquation : 
+	\[
+	x^2 - x - 6 > 0
+	\]
+	On calcule $\Delta$ :
+	\begin{align*}
+		\Delta &= (-1)^2 - 4\times1\times(-6)  \\
+		&= 1 + 24 \\
+		&= 25 \quad \text{donc 2 racines}
+	\end{align*}
+	On calcule les racines :
+	\[
+	x_1 = \frac{1 + \sqrt{25}}{2} = \frac{6}{2} = 3 \quad \quad x_2 = \frac{1 - \sqrt{25}}{2} = \frac{-4}{2} = -2
+	\]
+	On dresse le tableau de signe de $f$ : \\\\
+	\begin{tikzpicture}
+	\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $-2$, $3$, $+\infty$}
+	\tkzTabLine{,+,z,-,z,+}
+	\end{tikzpicture}\\
+	$a$ étant positif on a donc : $+, -, +$.\\
+	
+	\noindent On résout :
+	\[
+	S = ]-\infty;-2[ \cup ]3;+\infty[
+	\]
+	
+	\rule{\textwidth}{0.4pt}
+	\noindent \textbf{Exercice n°5 :}
+	On considère la inéquation suivante : $x^2 - 5x + 6 > 0$
+	\begin{enumerate}
+	\item Résoudre l'inéquation.
+	\end{enumerate}
+	
+	\rule{\textwidth}{0.4pt}
+	\newpage
+	\section{Extremums}
+	\subsection{Tableau de variation}
+	\noindent Un tableau de variation est défini sous cette forme :
+	\[
+	\begin{tikzpicture}
+	\tkzTabInit[lgt=3]
+	{$x$/1, $f(x)$/2}
+	{$-\infty$, $\alpha$, $+\infty$}
+	\tkzTabVar
+	{+/  , -/ $\beta$ , +/ }
+	\end{tikzpicture}
+	\]
+	Il permet de voir le maximum ou minimum d'une fonction, exprimé sous la forme ($\alpha$, $\beta$). (Dans ce cas $a > 0$ donc on cherche un minimum, mais si $a < 0$ alors les flèche iront dans le sens inverse et on chercherez alors un maximum.)
+	
+	\rule{\textwidth}{0.4pt}
+	\noindent \textbf{Exercice n°6 :}
+	On considère la fonction $f(x) = x^2 - 5x + 6$
+	\begin{enumerate}
+	\item Calculer $\alpha, \beta$
+	\item En déduire la forme canonique de $f$
+	\item Dresser un tableau de variation de $f$
+	\end{enumerate}
+	
+	\rule{\textwidth}{0.4pt}
+	
+	\section{Exercices}
+	Une petite série d'exercice mélangeant tout ce que l'on a vu sur le second degré.\\
+	
+	\textbf{Exercice 1 - Le rêve tarpin chelou de Lou}\\
+	Lou s'était endormi a son habitude vers 23h environ. Dans son long et agréable sommeil elle a rêvée de quelque chose d'assez inhabituelle.
+	C'était un lieu vide, mais au centre une silhouette familière, c'était Téo qui parler que en fonction mathématique tellement il étais fou du second degré ce malade mentale. Elle s'approcha et Téo lui dis de résoudre une équation. Ce qu'elle fais avec le sourire bien évidemment.\\
+	
+	\noindent On considère la fonction $f(x) = x^2 - 3x + 2$
+	
+	\begin{enumerate}
+		\item Résoudre $x^2 - 3x + 2 = 0$
+		\item En déduire la forme factorisée de $f$
+		\item Dresser un tableau de signe de $f$
+	\end{enumerate}	
+	
+	
+\end{document}
