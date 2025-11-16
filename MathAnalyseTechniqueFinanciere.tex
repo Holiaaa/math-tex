@@ -1,0 +1,278 @@
+\documentclass[french,10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\title{Maths en Finance : Analyse Technique}
+\author{Téo JAUFFRET}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage 
+	
+	\section{Introduction}
+	Depuis toujours, les mathématiques s’imposent comme un outil essentiel dans de nombreuses situations, que ce soit en physique, en mécanique ou même en cuisine. 
+	
+	Grâce aux mathématiques, il est possible d’analyser des données, de concevoir des objets ou des structures, d’optimiser des processus et de prendre des décisions éclairées dans de nombreux domaines de la vie quotidienne et scientifique.
+	
+	Cela ne fait pas exception dans le domaine financier, où les mathématiques sont plus qu’un simple outil, mais constituent un véritable langage permettant d’analyser les marchés, d’évaluer les risques et d’élaborer des stratégies efficaces.
+	
+	Dans la finance moderne, on distingue deux grandes approches d’analyse : \textbf{l’analyse fondamentale}, qui étudie la santé économique, financière et structurelle d’une entreprise ou d’un actif, et \textbf{l’analyse technique}, qui se concentre sur l’étude des graphiques, des tendances et des données historiques de prix. \\ \\
+	C’est cette seconde approche, fortement ancrée dans les mathématiques et les statistiques, que nous allons étudier.
+	
+	\section{Un exemple concret}
+	Au cours de cet entretien, nous allons tenter de prédire l’évolution possible du prix futur d’une cryptomonnaie, un actif financier numérique : \textbf{Bitcoin}.
+	
+	Pour cela, j'ai récupéré sur les marchés financiers les données historique de \textbf{Bitcoin} sur une période de \textbf{14 jours}, ce qui devrais être suffisant pour effectuer l'analyse technique sur cette actif. \\
+	
+	\noindent Les données sont les suivantes (arrondi a l'entier supérieur) : 
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Date} & \textbf{Prix a la clôture (en USD)} \\ \hline
+			2025‑11‑01 & 110065 \\ \hline  
+			2025‑11‑02 & 109991 \\ \hline  
+			2025‑11‑03 & 106543 \\ \hline  
+			2025‑11‑04 & 101591 \\ \hline  
+			2025‑11‑05 & 103892 \\ \hline  
+			2025‑11‑06 & 101302 \\ \hline  
+			2025‑11‑07 & 103373 \\ \hline  
+			2025‑11‑08 & 102283 \\ \hline  
+			2025‑11‑09 & 104720 \\ \hline  
+			2025‑11‑10 & 105997 \\ \hline  
+			2025‑11‑11 & 102998 \\ \hline  
+			2025‑11‑12 & 101664 \\ \hline  
+			2025‑11‑13 & 99698 \\ \hline  
+			2025‑11‑14 & 94541 \\ \hline
+		\end{tabular}
+		\caption{Données issue de \textit{https://fr.investing.com/}}
+	\end{table}
+	
+	\section{Indice de force relative}
+	Premièrement nous allons déterminer si l'actif se trouve en zone de \textbf{sur achat} (lorsqu'un actif est plus acheté que vendu) ou de \textbf{sur vente} (lorsqu'un actif est plus vendu que acheté) a l'aide d'un indicateur appelé le \textbf{\textit{RSI}} (pour \textit{Relative Strength Index}) qui mesure la force relative des gains et des pertes sur une période $N$ donnée. \\
+	
+	\noindent Pour cela, nous allons utiliser la formule de l'indicateur, qui est la suivante :
+	
+	\[
+	RSI = 100 - \frac{100}{1+RS} \quad \quad  \text{où } RS = \frac{\text{Moyenne des gains sur $N$ périodes}}{\text{Moyenne des pertes sur $N$ périodes}}
+	\]
+	
+	\noindent Pour notre analyse nous allons utiliser les 14 derniers prix de clôture de \textbf{Bitcoin}, donc on va considéré $N = 14$ pour le calcule de $RS$.
+	
+	\subsection{Calcule de RS}
+	
+	Pour calculer $RS$, nous allons déterminer tout les gains et perte sur $N$ périodes. \\
+	
+	\noindent \textbf{1. Moyenne des gains}
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Date} & \textbf{Prix a la clôture (en USD)} \\ \hline
+			2025‑11‑01 & 110065 \\ \hline  
+			2025‑11‑02 & 109991 \\ \hline  
+			2025‑11‑03 & 106543 \\ \hline  
+			2025‑11‑04 & 101591 \\ \hline  
+			2025‑11‑05 & 103892 \textcolor{darkgreen}{+2301} \\ \hline  
+			2025‑11‑06 & 101302 \\ \hline  
+			2025‑11‑07 & 103373 \textcolor{darkgreen}{+2071}\\ \hline  
+			2025‑11‑08 & 102283 \\ \hline  
+			2025‑11‑09 & 104720 \textcolor{darkgreen}{+2437}\\ \hline  
+			2025‑11‑10 & 105997 \textcolor{darkgreen}{+1277}\\ \hline  
+			2025‑11‑11 & 102998 \\ \hline  
+			2025‑11‑12 & 101664 \\ \hline  
+			2025‑11‑13 & 99698 \\ \hline  
+			2025‑11‑14 & 94541 \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	On calcule la somme des gains : 
+	\[
+		2301 + 2071 + 2437 + 1277 = \textbf{8086}
+	\]
+	
+	On calcule donc la moyenne des gains sur $N$ :
+	\[
+	\frac{8086}{14} \approx 577,57
+	\]
+	\newpage
+	
+	\noindent \textbf{2. Moyenne des pertes}
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Date} & \textbf{Prix a la clôture (en USD)} \\ \hline
+			2025‑11‑01 & 110065 \\ \hline  
+			2025‑11‑02 & 109991 \textcolor{red}{-74}\\ \hline  
+			2025‑11‑03 & 106543 \textcolor{red}{-3448} \\ \hline  
+			2025‑11‑04 & 101591 \textcolor{red}{-4952} \\ \hline  
+			2025‑11‑05 & 103892 \\ \hline  
+			2025‑11‑06 & 101302 \textcolor{red}{-2590}\\ \hline  
+			2025‑11‑07 & 103373 \\ \hline  
+			2025‑11‑08 & 102283 \textcolor{red}{-1090}\\ \hline  
+			2025‑11‑09 & 104720 \\ \hline  
+			2025‑11‑10 & 105997 \\ \hline  
+			2025‑11‑11 & 102998 \textcolor{red}{-2999}\\ \hline  
+			2025‑11‑12 & 101664 \textcolor{red}{-1334}\\ \hline  
+			2025‑11‑13 & 99698 \textcolor{red}{-1966}\\ \hline  
+			2025‑11‑14 & 94541 \textcolor{red}{-5157} \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	On calcule la somme des pertes : 
+	\[
+	74 + 3448 + 4952 + 2590 + 1090 + 2999 + 1334 + 1966 + 5157 = \textbf{23610}
+	\]
+	
+	On calcule donc la moyenne des gains sur $N$ :
+	\[
+	\frac{23610}{14} \approx 1686.42
+	\]
+	
+	\noindent \textbf{3. Calcule de RS}
+	
+	\[
+	RS = \frac{\text{Moyenne des gains sur N périodes}}{\text{Moyenne des pertes sur N périodes}}
+	\]
+	
+	\noindent On remplace : 
+	
+	\begin{align*}
+	RS &= \frac{577,57}{1686,42} \\
+	RS &\approx 0.34
+	\end{align*}
+	
+	\subsection{Calcule du RSI}
+	
+	\noindent On peut maintenant calculer l'indicateur :
+	\[
+	RSI = 100 - \frac{100}{1+RS}
+	\]
+	
+	\noindent On remplace : 
+	\begin{align*}
+	RSI &= 100 - \frac{100}{1+0,34} \\
+	RSI &= 100 - \frac{100}{1,34} \\
+	RSI &\approx 100 - 74,63 \\
+	RSI &\approx \textbf{25,37}
+	\end{align*}
+	
+	\noindent On a déterminer le RSI a 25,37. Nous allons voir maintenant comment l'interpréter financièrement.
+	
+	\subsection{Interprétation du RSI}
+	Comme dit précédemment le RSI est un indicateur qui mesure la force relative entre les gains et les pertes d'un actif sur une période $N$ donnée. \\ \\
+	Plus cette indicateur va se rapprocher des \textbf{zones extrêmes (30-70)} plus il signale que l'actif pourrait se trouver dans une zone de \textbf{sur achat} ou de \textbf{sur vente} :\\
+	 
+	\begin{itemize}
+		\item Si \textbf{RSI < 30} ou \textbf{autour de 30} alors l'actif se trouve dans une zone de \textbf{sur vente}, cela signifie que un retournement haussier du marché peut se produire.  
+		
+		\item Si \textbf{RSI > 70} ou \textbf{autour de 70} alors l'actif se trouve dans une zone de \textbf{sur achat}, cela signifie que un retournement baissier du marché peut se produire.\\
+	\end{itemize}
+	
+	\noindent Dans notre cas, le RSI se trouve dans une zone de \textbf{sur vente} (25,37 < 30), cela nous indique un potentiel retournement haussier du marché. \\
+	
+	\noindent Maintenant que l'on sais que le marché peut rebondir, nous pouvons essayer de déterminer les prix où le marché pourrais atteindre en rebondissant.
+	
+	\section{Le retracement de Fibonacci}
+	La suite de Fibonacci est une suite de nombres défini par récurrence. Chaque terme de la suite est la somme des 2 termes qui le précédent :
+	
+	\[
+		F_n = F_{n-1} + F_{n-2}
+	\]	
+	
+	\noindent Où :
+	\begin{align*}
+		F_0 = 0 \\
+		F_1 = 1 \\
+	\end{align*}
+
+	\noindent Cette suite est très intéressante car elle permet d'obtenir un nombre assez unique en divisant un terme de la suite avec le terme d'avant : 
+	
+	\begin{align*}
+		\frac{F_n}{F_{n-1}} \approx 1,618
+	\end{align*}
+	
+	\noindent Ce nombre, \textbf{1,618} est appelé \textbf{Nombre d'or} $\phi$, et on le retrouve dans beaucoup de choses comme dans des éléments de la nature, dans des proportion parfaite, l'énergie mais aussi en finance ! \\
+	
+	\noindent En effet, ce nombre peut permettre de calculer des paliers que le prix pourrais atteindre en cas d'inversion de tendance.
+	
+	\subsection{Calcule des proportions}
+	
+	Pour notre analyse, nous allons déterminer les trois proportions de retracement principaux où le prix de l'actif pourrait atteindre lors du rebondissement haussier : 38,2$\%$, 50$\%$ et 61,8$\%$. \\
+
+	\noindent Les proportions (0,618 et 0,382) sont données par les calcules suivant : 
+	\[
+	0,618 = \frac{1}{\phi}
+	\]
+	\[
+	0,382 = 1 - \phi
+	\]
+	 
+	\noindent Pourquoi avoir choisi ses proportions ? Car ses proportions correspondent au ratios clés de Fibonacci et sont largement utilisés par les traders depuis des dizaines d'années.
+	
+	\subsection{Formule du retracement}
+	
+	La formule du retracement de Fibonacci s'exprime sous la forme : 
+	
+	\noindent Pour une baisse : 
+	\[
+	H - p \times (|H - L|)
+	\]
+	
+	\noindent Pour une hausse : 
+	\[
+	L + p \times (|H - L|)
+	\]
+	
+	\noindent Où :
+	\begin{itemize}
+		\item $H$ : Prix le plus haut
+		\item $L$ : Prix le plus bas
+		\item $p$ : Proportion de retracement
+		\item $|H - L|$ : Écart entre le prix le plus haut et le prix le plus bas
+	\end{itemize}
+	
+	\subsection{Calcule du retracement}
+	
+	On calcule pour 38,2$\%$ : 
+	\begin{align*}
+	& 94541 + 0,382 \times (|110065 - 94541|) \\
+	&= 94541 + 0,382 \times 15524 \\
+	&= 94541 + 5930.16 \\
+	&\approx 104134 \\
+	\end{align*}
+	
+	On calcule pour 50$\%$ : 
+	\begin{align*}
+		& 94541 + 0,5 \times (|110065 - 94541|) \\
+		&= 94541 + 0,5 \times 15524 \\
+		&= 94541 + 7762 \\
+		&\approx 102303 \\
+	\end{align*}
+	
+	On calcule pour 61,8$\%$ : 
+	\begin{align*}
+		& 94541 + 0,618 \times (|110065 - 94541|) \\
+		&= 94541 + 0,618 \times 15524 \\
+		&= 94541 + 9593.83 \\
+		&\approx 100471 \\
+	\end{align*}
+	
+	\noindent On a donc \textbf{100471} pour la proportion 32,8$\%$. \\
+	On a donc \textbf{102303} pour la proportion 50$\%$. \\
+	On a donc \textbf{104135} pour la proportion 61,8$\%$. 
+	
+	\subsection{Interprétation}
+	
+	Avec les paliers obtenue grâce aux proportions on peut estimer que le prix après le rebond haussier devrais se situer entre 100471\$ et 104135\$ 
+	
+	\section{Vérification}
+	Nous sommes 1 semaine après les calcules du RSI et du retracement de Fibonacci. Nous allons voir si la tendance a bien été inversé et si oui/non le prix s'est bien situé entre 100471 et 104135.
+	
+	
+
+\end{document}
