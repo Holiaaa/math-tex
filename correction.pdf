@@ -1,0 +1,192 @@
+\documentclass[french,10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\title{Correction Bac de Mathématiques }
+\author{Téo JAUFFRET}
+\begin{document}
+	\maketitle
+	\noindent Correction du sujet 0 du Baccalauréat de Mathématique (pour élèves n'ayant pas suivi la spécialité mathématiques en première) \\
+	Utilise cette correction QUE après avoir fait les exercices.
+	Il peut y avoir des erreurs dans ma correction, si il y en dite le moi ~;)
+	\tableofcontents
+	\newpage
+	\section{Première partie - QCM}
+	\noindent \textbf{\underline{Question 1 :}} Donner un ordre de grandeur de $101 \times 99$ \\ \\
+	Pour donner un ordre de grandeur de cette multiplication on sais que : $100 \times 100 = 10000$, donc un ordre de grandeur idéal serais autour de 10000 pour ce calcule. La réponse correcte est donc la réponse \textbf{C}. \\
+	
+	\noindent \textbf{\underline{Question 2 :}} Un prix augmente de 20\% puis diminue de 20\% \\ \\
+	On prend par exemple 100 :
+	\[
+		100 \times 1.20 = 120
+	\]
+	où 1.20 est le coefficient multiplicateur multiplier a 100 pour ajouter 20\% (formule : $a \times (1 + \frac{b}{100})$, la formule pour enlever des pourcentages est la cette formule : $a \times ( 1 - \frac{b}{100})).$ \\
+	
+	\noindent On applique la réduction de 20\% : 
+	\[
+		120 \times 0.80 = 96
+	\]
+	
+	\noindent On remarque que le prix final est inférieur au prix initiale. La bonne réponse est donc la réponse \textbf{C}. \\
+
+	\noindent \textbf{\underline{Question 3 :}}  Par combien faut-il multiplier une quantité positive pour que celle-ci diminue
+	de 2.3\% ? \\
+	
+	\noindent On a vu précédemment que la formule pour enlever des pourcentages est la formule suivante : 
+	\[
+		a \times (1 - \frac{b}{100})
+	\]
+	
+	\noindent où :
+	\begin{itemize}
+		 \item $a$ est le nombre que l'on applique le pourcentage.
+		 \item $b$ est le pourcentage que l'on applique \\
+	\end{itemize}
+	
+	\noindent Donc dans le cadre de la question (on utilise uniquement la partie coefficient multiplicateur) : 
+	
+	\[
+	\bigg(1 - \frac{2.3}{100}\bigg) = 0.977
+	\] \\
+	
+	\noindent La bonne réponse est la réponse \textbf{B}. \\
+	\newpage
+	
+	\noindent \textbf{\underline{Question 4 :}} Dans un lycée, 50 élèves étudient le Grec, ce qui représente 4\% du nombre
+	d’élèves inscrits dans ce lycée. Calculer le nombre total d'élèves dans le lycée.\\
+	
+	\noindent Si 50 élèves représente 4\% du lycée, alors on sais que : 
+	
+	\[
+		\frac{50}{4} = \frac{x}{100}
+	\] 
+	
+	\noindent Alors on a : 
+	\begin{align*}
+		x &= \frac{100}{4} \times 50 \\
+		x &= 1250
+	\end{align*}
+	
+	\noindent La bonne réponse est la réponse \textbf{D} \\\\
+	\noindent \textbf{\underline{Question 5 :}} Le volume d’un glacier diminue de 3\% chaque année.
+	Si $V(n)$ désigne le volume du glacier pour l’année $a$, quelle est la bonne suite correspondante ? \\
+
+	
+	\noindent Ici l'énoncé nous annonce clairement une suite de récurrence géométrique (avec la diminution de 3\% chaque année) du type $U_{n+1} = Un * q$. La bonne réponse est la réponse \textbf{C}. (\textit{Une suite arithmétique n'aurais pas convenue car on a vu précédemment que pour attribuer une diminution en pourcentage a un nombre il faut multiplier ce nombre par un coefficient multiplicateur inférieur a 0 (voir formule en haut.)}) \\\\
+	
+	\noindent \textbf{\underline{Question 6 :}} Dans un repère du plan on a représenté une droite.
+	Le coefficient directeur de cette droite est égal à quelle valeur ? \\
+	
+	\noindent On remarque que la droite qui est tracée est une représentation graphique d'une fonction affine de type $ax+b$.
+	
+	\noindent Pour calculer le coefficient directeur de cette droite on utilise la formule suivante : 
+	
+	\[
+	CD = \frac{y_b - y_a}{x_b - x_a}
+	\]
+	\noindent où $CD$ est le coefficient directeur de $D$ \\
+	\noindent On remplace : 
+	\begin{align*}
+		CD &= \frac{(-1) - 2}{1 - 0} \\
+		CD &= \frac{-3}{1} \\
+		CD &= -3
+	\end{align*}
+	
+	\noindent La bonne réponse est la réponse \textbf{A}. \\\\
+	
+	\noindent \textbf{\underline{Question 7 :}} Dix stylos coûtent en tout 13 euros.
+	Le prix de trois stylos est égal à quoi? \\
+	
+	\noindent On sais que : 
+	\[
+		\frac{13}{10} = \frac{x}{3}
+	\]
+	
+	\noindent On calcule :
+	\begin{align*}
+		x &= \frac{13}{10} \times 3 \\
+		x &= 3.90
+	\end{align*}
+
+	\noindent La bonne réponse est la réponse \textbf{C}. \\\\
+	
+	\noindent \textbf{\underline{Question 8 :}} Une athlète parcourt 1 km en 5 minutes. Quelle est sa vitesse moyenne ? \\
+	
+	\noindent Ici on cherche sa vitesse moyenne (exprimée en $km/h$)
+	
+	\noindent On sais que :
+	\[
+		\frac{1}{5} = \frac{x}{60}
+	\]
+	
+	\noindent On calcule :
+	\begin{align*}
+		x &= 1 \times \frac{60}{5} \\
+		x &= 12
+	\end{align*}
+		
+	\noindent La bonne réponse est la réponse \textbf{C}. \\\\
+	
+	\noindent \textbf{\underline{Question 9 :}} Quelle représentation décrit la situation ? \\	
+	
+	\noindent On a comme données : 
+	\begin{itemize}
+		\item Groupe A : $\frac{1}{2}$ (car 60/30)
+		\item Groupe B : $\frac{1}{5}$ (car 60/12)
+		\item Le reste.
+	\end{itemize}
+	
+	\noindent La bonne représentation doit avoir 1 moitié colorié et $\frac{1}{5}$ colorié.
+	\noindent La bonne réponse est la réponse \textbf{B}. \\\\
+	
+	\noindent \textbf{\underline{Question 10 non corrigée. (Voir page \textit{Autres})}} \\
+	
+	\newpage
+	
+	\noindent \textbf{\underline{Question 11 :}} Le volume $V$ d’un cylindre de hauteur $h$ et de rayon $r$ est égal à quoi ? \\	
+	
+	\noindent On part de : 
+	\[
+		V = \pi r^2 h
+	\]
+	\noindent On isole h :
+	\[
+		h = \frac{V}{\pi r^2}
+	\]
+	\noindent Pour mieux comprendre ça, il faut s'entrainer sur l'isolement de variable.
+	
+	\noindent La bonne réponse est la réponse \textbf{C}. \\\\
+	
+	\noindent \textbf{\underline{Question 12 :}} Trouver quand $f(x) = 0$ \\
+	
+	\noindent Les solutions de $f(x) = 0$ sont représenter avec accolades, et sont les points où la courbe passe en 0. 
+	
+	\noindent La bonne réponse est la réponse \textbf{C}. \\\\
+	
+	\section{Deuxième Partie - Exercice 1}
+	\subsection{Partie A : Premier modèle.}
+	
+	\begin{enumerate}
+		\item $180-105=75$, le plat a baissé de 75°C en 3 minutes. En une minute il a perdu $\frac{75}{3}=25$ degrés.
+		\item $180-(25 \times 5)=55$, ok
+		\item $180-(25 \times 8)=-20$, le modèle n'est pas pertinent car on atteint des températures négative dans une pièce où la temperature ambiante y est positive. 
+	\end{enumerate}
+	
+	\subsection{Partie B - Deuxième modèle}
+	\begin{enumerate}
+		\item $180-25=155$, ok
+		\item $(U_n)$ suite géometrique de raison $q = 0.80$ alors on a bien $U_{n+1} = 0.80Un$
+		\item $U_n = U_0 \times 0.80^n$ (forme explicite de la suite)
+		\item Il pourra le servir au bout de 7 minutes.
+	\end{enumerate}
+	
+	\section{Autres}
+	
+	Cette correction ne concerne uniquement que le QCM et l'exercice 1 du sujet de bac.
+	
+	La question 10 du QCM n'est pas traité parce-que je connais que des manières d'y procéder mais avec des outils mathématique plus complexe et irréaliste sans calculatrice. Il est possible que en complémentaire il y est des outils adapter.
+	
+	Pour réussir les 2 autres exercices il faut bien apprendre les probabilités, fonctions, variations \& signes, pourcentages.
+	
+\end{document}
