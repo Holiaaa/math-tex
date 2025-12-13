@@ -1,5 +1,3 @@
-# Math-Tex
-
 Ensemble de mes codes LaTex pour mes cours de maths.
 
 Ce site traite plus en detail certaines notions mathématique que sur mon [Notion](https://windy-sodium-131.notion.site/Sp-cialit-math-matiques-2b75250320a580e195faedef2fd77fd6). 
