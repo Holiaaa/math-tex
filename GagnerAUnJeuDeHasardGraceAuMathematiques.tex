@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{float}
+
+\title{Comment gagner a un jeu de hasard grâce au Mathématiques}
+\author{Téo JAUFFRET}
+\date{Décembre 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Poison Treats est un jeu Roblox actuellement assez populaire (à l'heure d'édition de ce document), où l’objectif est de faire goûter le bonbon empoisonné à l’adversaire sans en consommer soi-même.
+Le premier joueur à goûter un bonbon empoisonné perd la partie, faisant de ce jeu un défi mêlant stratégie et prudence.
+À première vue, ce jeu semble entièrement basé sur le hasard, car il est extrêmement difficile, voire impossible, de prédire quel bonbon choisira son adversaire. Cependant, il est possible, grâce à des techniques mathématiques simples, de déterminer quels bonbons privilégier et lesquels éviter, afin d’augmenter ses chances de gagner et de manipuler ce hasard.
+
+\section{Etude mise en place}
+\noindent Pour déterminer quels bonbon choisir et lesquels éviter, nous allons regarder et analyser des parties de joueurs lambda. Nous allons analyser dans cette étude 2 facteurs : 
+\begin{enumerate}
+    \item Le premier bonbon choisis (peut importe le joueur)
+    \item Tout les bonbon choisis (dans chaque partie)
+\end{enumerate}
+Cela nous permettra de voir quels bonbon les joueurs choisissent en majorité et ceux qu'il choisissent en minorité, et de voir dans un second temps quels bonbon les joueurs choisissent dès le départ, et enfin nous verrons si il existe un lien entre ses deux facteurs pour maximiser ses chances de gagner.
+\noindent Pour des résultats fiable, nous analyserons 30 parties de joueurs.
+
+\section{Méthodes mise en place pour l'étude}
+La méthode utilisé pour recueillir les données a été de faire une page Web en HTML avec des boutons pour suivre l'état d'une partie du début a la fin. Les données étant exporté a la fin. (La page web est accessible ici : \\https://holiaaa.github.io/math-tex/PoisonTreatsWebPage.html).
+
+Pour analyser les données et produire un graphique j'ai utiliser un code python avec la libraire \textbf{matplotlib} pour générer 2 graphique (que vous verrez plus tard). (Le script python est accessible ici : https://github.com/Holiaaa/math-tex/blob/main/PoisonTreatsAnalyse.py)
+\newpage
+\section{Résultats obtenues}
+\noindent Une fois le recuillement des données et l'analyse effectuer on obtient ceci :
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{frequence_nombres.png}
+    \caption{Fréquence des nombres les plus choisis sur 30 parties}
+    \label{fig:placeholder}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{premier_nombre_choisi.png}
+    \caption{Fréquence des premiers nombre choisis sur 30 parties}
+    \label{fig:placeholder}
+\end{figure}
+
+\subsection{Nombres les plus choisis sur 30 parties}
+On remarque que sur 30 parties certains nombres sont plus présent que d'autre.
+Notamment le numéro \textbf{20} qui apparait $P(20) = \frac{14}{30}\times100 = 46,6\%$. C'est une stats intéressante car cela montre que sur $\approx$ $\frac{1}{2}$ des 3O parties jouées, le numéro \textbf{20} était pris. On a également le numéro \textbf{19} qui est choisis a $P(19) = \frac{12}{30}\times100 = 40\%$, ainsi que les numéros \textbf{21,22,10} qui étaient choisient a 36,6\%
+
+On remarque également que certains numéro ne sont pas beaucoup choisis, comme c'est le cas du 3 : $P(3) = \frac{3}{30} \times100 = 10\%$, et des nombres 7, 12, 14 et 18. (16,6\% a 20\% pour ses nombres).
+
+On peut établir une \textbf{heatmap} des nombres choisis pour voir ses mêmes résultats sur un graphique similaire au jeu. (Les couleurs les plus foncées sont les nombres les plus choisis et inversemment).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{heatmap.png}
+    \caption{Heatmap des nombres choisis}
+    \label{fig:placeholder}
+\end{figure}
+
+On remaque que le coté bas (la où se trouve 20, 21, 22) est très dense en choix, et que a l'inverse, les cotés proches des joueurs ne sont pas très choisies. (Nous analyserons cela dans une prochaine section).
+
+\subsection{Premier nombre les plus choisies sur 30 parties}
+
+On remarque sur le graphique que les nombres les plus choisies en premier sur 30 parties sont le \textbf{6} et le \textbf{15}, on en déduit que il y a statistiquement $P(6) = P(15) = \frac{3}{24}\times100=12,5\%$ de chance que le joueur en face prennent ses nombres. Egalement, les nombres \textbf{1, 4, 9, 19, 24} sont très choisies en premier nombre avec une chance d'être choisie de $P(1) = P(4) = P(9) = P(19) = P(24) = \frac{2}{24}\times100 = 8,3\%$, En regardant la \textbf{heatmap} (Figure 3) on remarque que ses nombre se situent a $P(Dans~un~coin) =\frac{4}{6} \times 100 = 66,6\%$ dans un coin. (Nous analyserons cela dans une prochaine section)
+
+\section{Analyse des résultats}
+\subsection{Figure 1 \& Figure 3}
+On a vu précedemment que les nombres les plus choisie sont le \textbf{19,20,21,22,10}, on remarque sur la \textbf{heatmap} (Figure 3) que ses nombres se situent en bas du plateau. Un choix judicieux serait de placer son bonbon piégé sur une des cases qui a afficher un pourcentage de choix élévé en bas de ce plateau.
+
+On peut ducoup pour maximiser nos chances de ne pas tomber sur le bonbon piégé de l'adversaire, de prendre des bonbon se situant dans les zones près des joueurs (comme la heatmap nous l'indique), car cette zone semble être pas favorisé par les joueurs pour choisir un bonbon ici. On peut également essayer le haut du plateau (comme nous le montre les nombres autour du 3 sur la heatmap).
+
+\subsection{Figure 2}
+On a vu que les nombres les plus choisies dès le départ sont le \textbf{6} et le \textbf{15} a 12,5\%. Une stratégie peut être envisagée ici pour tenter que l'adversaire tombe sur le bonbon piégé dès le début de la partie. Mais ici, un choix judicieux serais de privilégié le \textbf{19} car en regardant la Figure 2 il a \textbf{8,6\%} d'être choisie au premier tour et \textbf{40\%} d'être choisie après (comme le montre la Figure 1).
+
+\section{Résultat Final + Conclusion}
+Cette étude nous a montrer que les nombres les plus susceptible d'être choisies sont les nombres du bas du plateau (proche de 20), que ceux qui sont moins choisies sont autour de 3 et des cotés (vers les joueurs). On remarque que \textbf{19}, \textbf{20} semblent être des nombres très avantageux car ils ont une forte probabilité que l'autre tombe dessus.
+
+En conclusion, nous venont de montrer que même si un jeu qui tient uniquement sur le hasard, peut montrer certaine faiblesse qui permet de tromper et de manipuler se hasard. Ses faiblesse peuvent être due a un grand nombre de facteurs comme la position de la caméra dans laquelle le duel prend place, ou encore le type de support utiliser, etc... \\
+
+\textit{Avertissement } - Ici il s'agit de statistiques réaliser sur 30 parties. Une étude plus précise serais sur 50 ou bien 100 parties pour des résultats plus juste. 
+
+\section{Autres}
+\begin{itemize}
+    \item Le code de la heatmap peut être reproduit en se basant sur le code des graphique et en intégrant \textbf{numpy} avec le modèle \textbf{heatmap2d} de \textbf{matplotlib}
+    \item Page roblox du jeu : \\https://www.roblox.com/fr/games/73257710123935/Poison-Treats
+\end{itemize}
+
+\vspace*{\fill}
+\begin{center}
+    \textcopyright~2025 Téo JAUFFRET\\
+    Document sous licence MIT.\\[1em]
+    https://holiaaa.github.io/math-tex\\.
+\end{center}
+\vspace*{\fill}
+
+\end{document}
