@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Poison Treats - Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #111;
+            color: white;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 80px);
+            gap: 10px;
+            justify-content: center;
+            margin: 20px;
+        }
+        button {
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+        }
+        .candy {
+            background: #ff5fa2;
+            color: black;
+        }
+        .export {
+            margin-top: 20px;
+            background: #4caf50;
+            color: black;
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+        pre {
+            background: #222;
+            padding: 10px;
+            text-align: left;
+            max-width: 500px;
+            margin: 20px auto;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🍬 Poison Treats – Statistiques</h1>
+<p>Page web utilisé lors de l'étude du document : "Comment gagner a un jeu de hasard grâce au Mathématiques" (accessible sur <a href="https://holiaaa.github.io/math-tex">Holiaaa MathTex</a>)</p>
+
+<div class="grid" id="grid"></div>
+
+<button class="export" onclick="exportJSON()">📤 Export JSON</button>
+
+<pre id="output"></pre>
+
+<script>
+    const stats = {};
+    let firstbutton = 0;
+    let totalGames = 0;
+  
+    for (let i = 1; i <= 24; i++) {
+        stats[i] = 0;
+    }
+
+    const grid = document.getElementById("grid");
+
+    for (let i = 1; i <= 24; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.className = "candy";
+        btn.onclick = () => {
+            stats[i]++;
+            totalGames++;
+            if (firstbutton == 0) {
+                firstbutton = i;
+            }
+            btn.style = "background-color: #fff";
+            alert(`Nombre enregistrée : bonbon ${i}`);
+        };
+        grid.appendChild(btn);
+    }
+
+    function exportJSON() {
+        const data = {
+            total_parties: totalGames,
+            first_button: firstbutton,
+            resultats: stats
+        };
+
+        const json = JSON.stringify(data, null, 2);
+        document.getElementById("output").textContent = json;
+
+        const blob = new Blob([json], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "pick_a_treat_stats.json";
+        a.click();
+
+        URL.revokeObjectURL(url);
+    }
+</script>
+
+</body>
+</html>
