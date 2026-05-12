@@ -6,5 +6,6 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
 - Correction Bac de Maths (Maths complémentaire - 1ère) (Sujet 0-3) : [Ici](https://holiaaa.github.io/math-tex/CorrectionSujet0-3BacDeMaths.pdf)
 - Comment gagner a un jeu de hasard grâce au Mathématiques ? [Ici](https://holiaaa.github.io/math-tex/GagnerAUnJeuDeHasardGraceAuMathematiques.pdf) [ [Code Latex ici](https://raw.githubusercontent.com/Holiaaa/math-tex/refs/heads/main/GagnerAUnJeuDeHasardGraceAuMathematiques.tex) ]
 - Fonctionnement du DCA expliqué mathématiquement : [Ici](https://holiaaa.github.io/math-tex/DCA.pdf)
+- Comment modéliser et mesurer le risque d’un investissement grâce à des simulations aléatoires ? [Ici](https://holiaaa.github.io/math-tex/montecarloRisque.pdf)
 
 > Téo JAUFFRET 
