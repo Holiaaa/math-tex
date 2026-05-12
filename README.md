@@ -1,3 +1,4 @@
+# MathTex
 Ensemble de mes codes LaTex pour mes cours de maths.
 
 Ce site traite plus en detail certaines notions mathématique que sur mon [Notion](https://windy-sodium-131.notion.site/Sp-cialit-math-matiques-2b75250320a580e195faedef2fd77fd6). 
@@ -8,4 +9,4 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
 - Fonctionnement du DCA expliqué mathématiquement : [Ici](https://holiaaa.github.io/math-tex/DCA.pdf)
 - Comment évaluer les risques d'un actif financier grâce a la méthode de Monte-Carlo ? [Ici](https://holiaaa.github.io/math-tex/montecarloRisque.pdf)
 
-> Téo JAUFFRET 
+  
