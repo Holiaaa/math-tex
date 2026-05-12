@@ -6,6 +6,7 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
 - Cours complet sur Polynôme second degré : [Ici](https://holiaaa.github.io/math-tex/Poly2ndDegOriginal.pdf) [ [Code LaTex ici](https://raw.githubusercontent.com/Holiaaa/math-tex/refs/heads/main/Poly2ndDegOriginal.tex) ]
 - Correction Bac de Maths (Maths complémentaire - 1ère) (Sujet 0-3) : [Ici](https://holiaaa.github.io/math-tex/CorrectionSujet0-3BacDeMaths.pdf)
 - Comment gagner a un jeu de hasard grâce au Mathématiques ? [Ici](https://holiaaa.github.io/math-tex/GagnerAUnJeuDeHasardGraceAuMathematiques.pdf) [ [Code Latex ici](https://raw.githubusercontent.com/Holiaaa/math-tex/refs/heads/main/GagnerAUnJeuDeHasardGraceAuMathematiques.tex) ]
+   - Page web de l'étude : [Ici](https://holiaaa.github.io/math-tex/PoisonTreatsWebPage.html)
 - Fonctionnement du DCA expliqué mathématiquement : [Ici](https://holiaaa.github.io/math-tex/DCA.pdf)
 - Comment évaluer les risques d'un actif financier grâce a la méthode de Monte-Carlo ? [Ici](https://holiaaa.github.io/math-tex/montecarloRisque.pdf)
 
