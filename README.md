@@ -11,3 +11,5 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
 - Comment évaluer les risques d'un actif financier grâce a la méthode de Monte-Carlo ? [Ici](https://holiaaa.github.io/math-tex/montecarloRisque.pdf)
 
   
+### Autres
+- Math-Tex SES : [Ici](https://holiaaa.github.io/ses)
