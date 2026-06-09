@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Math-Tex X - Polynome</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjs@11.11.0/lib/browser/math.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-dark">
+
+<div class="card text-center" style="width: 400px;">
+    <div class="card-body">
+        <h1>Math-Tex <span class="badge text-bg-dark">X</span></h1>
+        <div class="btn-group">
+        <a href="http://teojauffret.com/math-tex/x" class="btn btn-primary">Dérivéé</a>
+        <a href="http://teojauffret.com/math-tex/x/polynome.html" class="btn btn-primary active" aria-current="page">Polynome</a>
+        </div>
+        <hr>
+        <h5 class="card-title">Calculatrice de polynômes du second degré</h5>
+        <p class="card-text">
+            Pour utiliser la calculatrice, merci de taper les coefficient de l'expression.
+        </p>
+        <hr>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm-a">a</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm-a">
+            <span class="input-group-text" id="inputGroup-sizing-sm-b">b</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm-b">
+            <span class="input-group-text" id="inputGroup-sizing-sm-c">c</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm-c">
+        </div>
+        <button class="btn btn-primary" type="button" id="button-addon2" onclick="calc()">Calculer les racines</button>
+        <hr>
+        <p id="out"></p>
+        <br>
+        <p id="latex"></p>
+        <p id="latex2"></p>
+    </div>
+</div>
+
+<script>
+function calc() {
+    const a = parseFloat(document.querySelector('input[aria-describedby="inputGroup-sizing-sm-a"]').value);
+    const b = parseFloat(document.querySelector('input[aria-describedby="inputGroup-sizing-sm-b"]').value);
+    const c = parseFloat(document.querySelector('input[aria-describedby="inputGroup-sizing-sm-c"]').value);
+
+    const delta = b**2 - 4*a*c;
+    document.getElementById("out").innerHTML = katex.renderToString(`\\Delta = ${delta}`);
+
+    if (delta < 0) {
+        document.getElementById("latex").innerHTML = "Pas de racines réelles.";
+        document.getElementById("latex2").innerHTML = "";
+    } else if (delta === 0) {
+        const root = -b / (2*a);
+        document.getElementById("latex").innerHTML = katex.renderToString(`x =  \\frac{-b}{2a} = ${root}`);
+        document.getElementById("latex2").innerHTML = "";
+    } else {
+        const root1 = (-b + Math.sqrt(delta)) / (2*a);
+        const root2 = (-b - Math.sqrt(delta)) / (2*a);
+        document.getElementById("latex").innerHTML = katex.renderToString(`x_1 =  \\frac{-(${b}) + \\sqrt{${delta}}}{2\\times(${a})} = ${root1}`);
+        document.getElementById("latex2").innerHTML = katex.renderToString(`x_2 =  \\frac{-(${b}) - \\sqrt{${delta}}}{2\\times(${a})} = ${root2}`);
+    }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
