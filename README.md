@@ -13,3 +13,4 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
   
 ### Autres
 - Math-Tex SES : [Ici](https://holiaaa.github.io/math-tex/ses)
+- Math-Tex X : [Ici](https://holiaaa.github.io/math-tex/x)
