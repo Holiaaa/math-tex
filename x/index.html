@@ -28,6 +28,8 @@
         </div>      
         <hr>
         <p id="out"></p>
+        <hr>
+        <p id="latex"></p>
     </div>
 </div>
 
@@ -42,7 +44,9 @@ function calc() {
 
     document.getElementById("out").innerHTML =
         katex.renderToString(latex);
-    }
+
+    document.getElementById("latex").innerHTML = latex;
+}
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
