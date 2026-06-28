@@ -9,6 +9,7 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
    - Page web de l'étude : [Ici](https://holiaaa.github.io/math-tex/PoisonTreatsWebPage.html)
 - Fonctionnement du DCA expliqué mathématiquement : [Ici](https://holiaaa.github.io/math-tex/DCA.pdf)
 - Comment évaluer les risques d'un actif financier grâce a la méthode de Monte-Carlo ? [Ici](https://holiaaa.github.io/math-tex/montecarloRisque.pdf)
+- DS Maths-Expert n°1 : [Ici](https://holiaaa.github.io/math-tex/DS-Mathématiques.pdf)
 
   
 ### Autres
