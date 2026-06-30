@@ -5,3 +5,4 @@ Voici les fiches de maths pour Pauline :
 - Fiche découverte second degré & dérivation & suites : [Ici](https://holiaaa.github.io/math-tex/popoy/Evaluation-2-1.pdf)
 - Exercice fiche 1 : [Ici](https://holiaaa.github.io/math-tex/popoy/exopauline.pdf)
 - Technique de maths : [Ici](https://holiaaa.github.io/math-tex/popoy/Exercice_pauline-1.pdf)
+- Suites Popoy : [Ici](https://holiaaa.github.io/math-tex/popoy/Suites_Popoy.pdf)
