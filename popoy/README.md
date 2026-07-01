@@ -8,3 +8,4 @@ Voici les fiches de maths pour Pauline :
 - Suites Popoy : [Ici](https://holiaaa.github.io/math-tex/popoy/Suites_Popoy.pdf)
 - Suites (avec Up) : [Ici](https://holiaaa.github.io/math-tex/popoy/Up.pdf)
 - Python partie 1 : [Ici](https://github.com/Holiaaa/math-tex/blob/main/popoy/cours.ipynb)
+- Formule de suites : [Ici](https://holiaaa.github.io/math-tex/popoy/Up.pdf)
