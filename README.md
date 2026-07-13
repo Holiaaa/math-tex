@@ -11,7 +11,7 @@ Ce site traite plus en detail certaines notions mathématique que sur mon [Notio
 - Correction Bac de Maths (Maths complémentaire - 1ère) (Sujet 0-3) : [Ici](https://holiaaa.github.io/math-tex/CorrectionSujet0-3BacDeMaths.pdf)
 
 ### MathTex Maths Expertes & Licence 1
-- DS Maths-Expert n°1 : [Ici](https://holiaaa.github.io/math-tex/DS_Mathématiques.pdf)
+- DS Maths-Expert n°1 : [Ici](https://holiaaa.github.io/math-tex/DS_Mathématique.pdf)
 
 ### Fun
 - Comment gagner a un jeu de hasard grâce au Mathématiques ? [Ici](https://holiaaa.github.io/math-tex/GagnerAUnJeuDeHasardGraceAuMathematiques.pdf) [ [Code Latex ici](https://raw.githubusercontent.com/Holiaaa/math-tex/refs/heads/main/GagnerAUnJeuDeHasardGraceAuMathematiques.tex) ]
