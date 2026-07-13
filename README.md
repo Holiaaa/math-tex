@@ -4,12 +4,12 @@ Ensemble de mes codes LaTex pour mes cours de maths.
 Ce site traite plus en detail certaines notions mathématique que sur mon [Notion](https://windy-sodium-131.notion.site/Sp-cialit-math-matiques-2b75250320a580e195faedef2fd77fd6) (Terminal, Première, Maths Expertes). 
 
 ### MathTex Terminal Spé
-- Symboles mathématiques : [Ici](https://holiaaa.github.io/math-tex/Langages_mathématiques.pdf)
+- Symboles mathématiques : [Ici](https://holiaaa.github.io/math-tex/Langages_mathématique.pdf)
 
 ### MathTex 1ère Spé
 - Cheat Code dérivée [Ici](https://holiaaa.github.io/math-tex/Cheat_Code_dérivée.pdf) 
 - Cours complet sur Polynôme second degré : [Ici](https://holiaaa.github.io/math-tex/Poly2ndDegOriginal.pdf) [ [Code LaTex ici](https://raw.githubusercontent.com/Holiaaa/math-tex/refs/heads/main/Poly2ndDegOriginal.tex) ]
-- Symboles mathématiques : [Ici](https://holiaaa.github.io/math-tex/Langages_mathématiques.pdf)
+- Symboles mathématiques : [Ici](https://holiaaa.github.io/math-tex/Langages_mathématique.pdf)
 
 ### MathTex 1ère Maths Complémentaire
 - Correction Bac de Maths (Maths complémentaire - 1ère) (Sujet 0-3) : [Ici](https://holiaaa.github.io/math-tex/CorrectionSujet0-3BacDeMaths.pdf)
