@@ -10,3 +10,4 @@ Voici les fiches de maths pour Pauline :
 - Python partie 1 : [Ici](https://github.com/Holiaaa/math-tex/blob/main/popoy/cours.ipynb)
 - Formule de suites : [Ici](https://holiaaa.github.io/math-tex/popoy/Formules_de_Suites.pdf)
 - Fractions [Ici](https://holiaaa.github.io/math-tex/popoy/fractions.pdf)
+- Pauline Python Bac Première Spé [Ici](https://holiaaa.github.io/math-tex/popoy/python.pdf)
